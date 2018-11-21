@@ -1,0 +1,133 @@
+
+digraph graph_name {
+	
+word00 [
+	shape = plaintext,
+	width = 0.5,
+	height = 1,
+	pos = "100,500!"
+];
+
+word01 [
+	shape = plaintext,
+	width = 0.5,
+	height = 1,
+	pos = "200,500!"
+];
+
+word02 [
+	shape = plaintext,
+	width = 0.5,
+	height = 1,
+	pos = "300,500!"
+];
+
+encoder00 [
+	shape = box,
+	width = 1,
+	height = 1,
+	pos = "100,300!"
+];
+
+encoder01 [
+	shape = box,
+	width = 1,
+	height = 1,
+	pos = "200,300!"
+];
+
+encoder02 [
+	shape = box,
+	width = 1,
+	height = 1,
+	pos = "300,300!"
+];
+encoder00 -> encoder01 
+encoder01 -> encoder02 
+word00 -> encoder00 
+word01 -> encoder01 
+word02 -> encoder02 
+
+word10 [
+	shape = plaintext,
+	width = 0.5,
+	height = 1,
+	pos = "100,400!"
+];
+
+word11 [
+	shape = plaintext,
+	width = 0.5,
+	height = 1,
+	pos = "200,400!"
+];
+
+word12 [
+	shape = plaintext,
+	width = 0.5,
+	height = 1,
+	pos = "300,400!"
+];
+
+encoder10 [
+	shape = box,
+	width = 1,
+	height = 1,
+	pos = "100,200!"
+];
+
+encoder11 [
+	shape = box,
+	width = 1,
+	height = 1,
+	pos = "200,200!"
+];
+
+encoder12 [
+	shape = box,
+	width = 1,
+	height = 1,
+	pos = "300,200!"
+];
+encoder10 -> encoder11 
+encoder11 -> encoder12 
+word00 -> encoder00 
+word01 -> encoder01 
+word02 -> encoder02 
+
+concat [
+	shape = ellipse,
+	width = 1,
+	height = 1,
+	pos = "400,250!"
+];
+encoder02 -> concat 
+encoder12 -> concat 
+concat -> decoder0 
+
+decoder0 [
+	shape = box,
+	width = 1,
+	height = 1,
+	pos = "400,100!"
+];
+
+decoder1 [
+	shape = box,
+	width = 1,
+	height = 1,
+	pos = "300,100!"
+];
+
+decoder2 [
+	shape = box,
+	width = 1,
+	height = 1,
+	pos = "200,100!"
+];
+decoder0 -> decoder1 
+decoder1 -> decoder2 
+
+}
+
+
